@@ -26,24 +26,24 @@ public class MemoryCandidateRepository implements CandidateRepository {
     private LocalDateTime localDateTime = timestamp.toLocalDateTime();
 
     private MemoryCandidateRepository() {
-        save(new Candidate(0, "Intern Java Developer",
+        save(new Candidate(0, "Bill Gates",
                 "Skils: OOP, Collections, Syntax, Templates,"
                         + " Lambda, Stream API", localDateTime));
-        save(new Candidate(0, "Junior Java Developer",
+        save(new Candidate(0, "Sergey Sukhorukov",
                 "Skils: Pro OOP, Collections, InputStreams,"
                         + " OutputStreams, Scanner, Lambda,"
                         + " Stream API", localDateTime));
-        save(new Candidate(0, "Junior+ Java Developer",
+        save(new Candidate(0, "Alexey Balabanov",
                 "Skils: Pro OOP, Collections, InputStreams,"
                         + " OutputStreams, Scanner, Lambda,"
                         + " Stream API, SQL, JDBC", localDateTime));
-        save(new Candidate(0, "Middle Java Developer",
+        save(new Candidate(0, "Alexey Balabanov",
                 "Skils: Pro OOP, Collections, InputStreams,"
                         + " OutputStreams, Scanner, Lambda,"
                         + " Stream API, SQL, JDBC, HTTP, HTTPS, Servlet,"
                         + "JSP, MVC, JSLT, Filter, Session, Auth, "
                         + "HTML, JS, CSS, Mockito", localDateTime));
-        save(new Candidate(0, "Middle+ Java Developer",
+        save(new Candidate(0, "Vladis Pelsh",
                 "Skils: Pro OOP, Collections, InputStreams,"
                         + " OutputStreams, Scanner, Lambda,"
                         + " Stream API, SQL, JDBC, HTTP, HTTPS, Servlet,"
@@ -52,7 +52,7 @@ public class MemoryCandidateRepository implements CandidateRepository {
                         + "Spring HibernateTemplate, Spring Data,"
                         + " Spring MVC, Spring Security, Spring Test, "
                         + "Spring Boot, Spring Web Service, Spring JMS", localDateTime));
-        save(new Candidate(0, "Senior Java Developer",
+        save(new Candidate(0, "Alla Pugacheva",
                 "Skils: Pro OOP, Collections, InputStreams,"
                         + " OutputStreams, Scanner, Lambda,"
                         + " Stream API, SQL, JDBC, HTTP, HTTPS, Servlet,"
