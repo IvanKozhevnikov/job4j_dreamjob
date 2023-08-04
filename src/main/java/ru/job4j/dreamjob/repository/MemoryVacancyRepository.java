@@ -1,5 +1,6 @@
 package ru.job4j.dreamjob.repository;
 
+import org.springframework.stereotype.Repository;
 import ru.job4j.dreamjob.model.Vacancy;
 
 import java.sql.Timestamp;
@@ -9,9 +10,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+@Repository
 public class MemoryVacancyRepository implements VacancyRepository {
-
-    private static final MemoryVacancyRepository INSTANCE = new MemoryVacancyRepository();
 
     private int nextId = 1;
 
@@ -59,10 +59,6 @@ public class MemoryVacancyRepository implements VacancyRepository {
                         + "Spring HibernateTemplate, Spring Data,"
                         + " Spring MVC, Spring Security, Spring Test, "
                         + "Spring Boot, Spring Web Service, Spring JMS", localDateTime));
-    }
-
-    public static MemoryVacancyRepository getInstance() {
-        return INSTANCE;
     }
 
     @Override

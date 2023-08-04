@@ -10,10 +10,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-
+@Repository
 public class MemoryCandidateRepository implements CandidateRepository {
-
-    private static final MemoryCandidateRepository INSTANCE = new MemoryCandidateRepository();
 
     private int nextId = 1;
 
@@ -61,10 +59,6 @@ public class MemoryCandidateRepository implements CandidateRepository {
                         + "Spring HibernateTemplate, Spring Data,"
                         + " Spring MVC, Spring Security, Spring Test, "
                         + "Spring Boot, Spring Web Service, Spring JMS", localDateTime));
-    }
-
-    public static MemoryCandidateRepository getInstance() {
-        return INSTANCE;
     }
 
     @Override
