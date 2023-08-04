@@ -10,15 +10,15 @@ import ru.job4j.dreamjob.service.CandidateService;
 @RequestMapping("/candidates") /* Работать с кандидатами будем по URI /candidates/** */
 public class CandidateController {
 
-    private final CandidateService сandidateService;
+    private final CandidateService candidateService;
 
-    public CandidateController(CandidateService сandidateService) {
-        this.сandidateService = сandidateService;
+    public CandidateController(CandidateService candidateService) {
+        this.candidateService = candidateService;
     }
 
     @GetMapping
     public String getAll(Model model) {
-        model.addAttribute("candidates", сandidateService.findAll());
+        model.addAttribute("candidates", candidateService.findAll());
         return "candidates/list";
     }
 
@@ -29,13 +29,13 @@ public class CandidateController {
 
     @PostMapping("/create")
     public String create(@ModelAttribute Candidate candidate) {
-        сandidateService.save(candidate);
+        candidateService.save(candidate);
         return "redirect:/candidates";
     }
 
     @GetMapping("/{id}")
     public String getById(Model model, @PathVariable int id) {
-        var candidateOptional = сandidateService.findById(id);
+        var candidateOptional = candidateService.findById(id);
         if (candidateOptional.isEmpty()) {
             model.addAttribute("message", "Вакансия с указанным идентификатором не найдена");
             return "errors/404";
@@ -46,7 +46,7 @@ public class CandidateController {
 
     @PostMapping("/update")
     public String update(@ModelAttribute Candidate candidate, Model model) {
-        var isUpdated = сandidateService.update(candidate);
+        var isUpdated = candidateService.update(candidate);
         if (!isUpdated) {
             model.addAttribute("message", "Вакансия с указанным идентификатором не найдена");
             return "errors/404";
@@ -56,7 +56,7 @@ public class CandidateController {
 
     @GetMapping("/delete/{id}")
     public String delete(Model model, @PathVariable int id) {
-        var isDeleted = сandidateService.deleteById(id);
+        var isDeleted = candidateService.deleteById(id);
         if (!isDeleted) {
             model.addAttribute("message", "Вакансия с указанным идентификатором не найдена");
             return "errors/404";
