@@ -29,21 +29,21 @@ public class MemoryVacancyRepository implements VacancyRepository {
     private MemoryVacancyRepository() {
         save(new Vacancy(0, "Intern Java Developer",
                 "Skils: OOP, Collections, Syntax, Templates,"
-                        + " Lambda, Stream API", localDateTime));
+                        + " Lambda, Stream API", localDateTime, true));
         save(new Vacancy(0, "Junior Java Developer",
                 "Skils: Pro OOP, Collections, InputStreams,"
                         + " OutputStreams, Scanner, Lambda,"
-                        + " Stream API", localDateTime));
+                        + " Stream API", localDateTime, true));
         save(new Vacancy(0, "Junior+ Java Developer",
                 "Skils: Pro OOP, Collections, InputStreams,"
                         + " OutputStreams, Scanner, Lambda,"
-                        + " Stream API, SQL, JDBC", localDateTime));
+                        + " Stream API, SQL, JDBC", localDateTime, true));
         save(new Vacancy(0, "Middle Java Developer",
                 "Skils: Pro OOP, Collections, InputStreams,"
                         + " OutputStreams, Scanner, Lambda,"
                         + " Stream API, SQL, JDBC, HTTP, HTTPS, Servlet,"
                         + "JSP, MVC, JSLT, Filter, Session, Auth, "
-                        + "HTML, JS, CSS, Mockito", localDateTime));
+                        + "HTML, JS, CSS, Mockito", localDateTime, true));
         save(new Vacancy(0, "Middle+ Java Developer",
                 "Skils: Pro OOP, Collections, InputStreams,"
                         + " OutputStreams, Scanner, Lambda,"
@@ -52,7 +52,7 @@ public class MemoryVacancyRepository implements VacancyRepository {
                         + "HTML, JS, CSS, Mockito, Spring IoC, "
                         + "Spring HibernateTemplate, Spring Data,"
                         + " Spring MVC, Spring Security, Spring Test, "
-                        + "Spring Boot, Spring Web Service, Spring JMS", localDateTime));
+                        + "Spring Boot, Spring Web Service, Spring JMS", localDateTime, true));
         save(new Vacancy(0, "Senior Java Developer",
                 "Skils: Pro OOP, Collections, InputStreams,"
                         + " OutputStreams, Scanner, Lambda,"
@@ -61,7 +61,7 @@ public class MemoryVacancyRepository implements VacancyRepository {
                         + "HTML, JS, CSS, Mockito, Spring IoC, "
                         + "Spring HibernateTemplate, Spring Data,"
                         + " Spring MVC, Spring Security, Spring Test, "
-                        + "Spring Boot, Spring Web Service, Spring JMS", localDateTime));
+                        + "Spring Boot, Spring Web Service, Spring JMS", localDateTime, true));
     }
 
     @Override
@@ -79,7 +79,8 @@ public class MemoryVacancyRepository implements VacancyRepository {
     @Override
     public boolean update(Vacancy vacancy) {
         return vacancies.computeIfPresent(vacancy.getId(), (id, oldVacancy) ->
-                new Vacancy(oldVacancy.getId(), vacancy.getTitle(), vacancy.getDescription(), localDateTime)) != null;
+                new Vacancy(oldVacancy.getId(), vacancy.getTitle(),
+                        vacancy.getDescription(), vacancy.getCreationDate(), vacancy.getVisible())) != null;
     }
 
     @Override
