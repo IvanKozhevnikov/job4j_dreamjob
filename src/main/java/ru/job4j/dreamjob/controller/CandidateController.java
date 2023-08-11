@@ -1,5 +1,6 @@
 package ru.job4j.dreamjob.controller;
 
+import net.jcip.annotations.ThreadSafe;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -7,6 +8,7 @@ import ru.job4j.dreamjob.model.Candidate;
 import ru.job4j.dreamjob.service.CandidateService;
 import ru.job4j.dreamjob.service.SimpleCandidateService;
 
+@ThreadSafe
 @Controller
 @RequestMapping("/candidates") /* Работать с кандидатами будем по URI /candidates/** */
 public class CandidateController {
@@ -47,12 +49,17 @@ public class CandidateController {
 
     @PostMapping("/update")
     public String update(@ModelAttribute Candidate candidate, Model model) {
-        var isUpdated = candidateService.update(candidate);
-        if (!isUpdated) {
-            model.addAttribute("message", "Вакансия с указанным идентификатором не найдена");
-            return "errors/404";
+        try {
+            var isUpdated = candidateService.update(candidate);
+            if (!isUpdated) {
+                model.addAttribute("message", "Вакансия с указанным идентификатором не найдена");
+                return "errors/404";
+            }
+            return "redirect:/candidates";
+        } catch (Exception e) {
+            model.addAttribute("message", e.getMessage());
+            return "error/404";
         }
-        return "redirect:/candidates";
     }
 
     @GetMapping("/delete/{id}")
