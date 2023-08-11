@@ -29,21 +29,21 @@ public class MemoryCandidateRepository implements CandidateRepository {
     private MemoryCandidateRepository() {
         save(new Candidate(0, "Bill Gates",
                 "Skils: OOP, Collections, Syntax, Templates,"
-                        + " Lambda, Stream API", localDateTime));
+                        + " Lambda, Stream API", localDateTime, 1));
         save(new Candidate(0, "Sergey Sukhorukov",
                 "Skils: Pro OOP, Collections, InputStreams,"
                         + " OutputStreams, Scanner, Lambda,"
-                        + " Stream API", localDateTime));
+                        + " Stream API", localDateTime, 2));
         save(new Candidate(0, "Alexey Balabanov",
                 "Skils: Pro OOP, Collections, InputStreams,"
                         + " OutputStreams, Scanner, Lambda,"
-                        + " Stream API, SQL, JDBC", localDateTime));
+                        + " Stream API, SQL, JDBC", localDateTime, 2));
         save(new Candidate(0, "Alexey Balabanov",
                 "Skils: Pro OOP, Collections, InputStreams,"
                         + " OutputStreams, Scanner, Lambda,"
                         + " Stream API, SQL, JDBC, HTTP, HTTPS, Servlet,"
                         + "JSP, MVC, JSLT, Filter, Session, Auth, "
-                        + "HTML, JS, CSS, Mockito", localDateTime));
+                        + "HTML, JS, CSS, Mockito", localDateTime, 2));
         save(new Candidate(0, "Vladis Pelsh",
                 "Skils: Pro OOP, Collections, InputStreams,"
                         + " OutputStreams, Scanner, Lambda,"
@@ -52,7 +52,7 @@ public class MemoryCandidateRepository implements CandidateRepository {
                         + "HTML, JS, CSS, Mockito, Spring IoC, "
                         + "Spring HibernateTemplate, Spring Data,"
                         + " Spring MVC, Spring Security, Spring Test, "
-                        + "Spring Boot, Spring Web Service, Spring JMS", localDateTime));
+                        + "Spring Boot, Spring Web Service, Spring JMS", localDateTime, 2));
         save(new Candidate(0, "Alla Pugacheva",
                 "Skils: Pro OOP, Collections, InputStreams,"
                         + " OutputStreams, Scanner, Lambda,"
@@ -61,7 +61,7 @@ public class MemoryCandidateRepository implements CandidateRepository {
                         + "HTML, JS, CSS, Mockito, Spring IoC, "
                         + "Spring HibernateTemplate, Spring Data,"
                         + " Spring MVC, Spring Security, Spring Test, "
-                        + "Spring Boot, Spring Web Service, Spring JMS", localDateTime));
+                        + "Spring Boot, Spring Web Service, Spring JMS", localDateTime, 2));
     }
 
     @Override
@@ -78,8 +78,11 @@ public class MemoryCandidateRepository implements CandidateRepository {
 
     @Override
     public boolean update(Candidate candidate) {
-        return candidates.computeIfPresent(candidate.getId(), (id, oldCandidate) ->
-                new Candidate(oldCandidate.getId(), candidate.getName(), candidate.getDescription(), localDateTime)) != null;
+        return candidates.computeIfPresent(candidate.getId(), (id, oldCandidate) -> {
+                return new Candidate(
+                        oldCandidate.getId(), candidate.getName(),
+                        candidate.getDescription(), candidate.getCreationDate(), candidate.getCityId());
+        }) != null;
     }
 
     @Override
