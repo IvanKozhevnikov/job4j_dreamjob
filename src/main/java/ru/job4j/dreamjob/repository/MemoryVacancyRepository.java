@@ -52,7 +52,8 @@ public class MemoryVacancyRepository implements VacancyRepository {
                         + "HTML, JS, CSS, Mockito, Spring IoC, "
                         + "Spring HibernateTemplate, Spring Data,"
                         + " Spring MVC, Spring Security, Spring Test, "
-                        + "Spring Boot, Spring Web Service, Spring JMS", localDateTime, true, 2, 0));
+                        + "Spring Boot, Spring Web Service, Spring JMS",
+                localDateTime, true, 2, 0));
         save(new Vacancy(0, "Senior Java Developer",
                 "Skils: Pro OOP, Collections, InputStreams,"
                         + " OutputStreams, Scanner, Lambda,"
@@ -61,7 +62,8 @@ public class MemoryVacancyRepository implements VacancyRepository {
                         + "HTML, JS, CSS, Mockito, Spring IoC, "
                         + "Spring HibernateTemplate, Spring Data,"
                         + " Spring MVC, Spring Security, Spring Test, "
-                        + "Spring Boot, Spring Web Service, Spring JMS", localDateTime, true, 2, 0));
+                        + "Spring Boot, Spring Web Service, Spring JMS",
+                localDateTime, true, 2, 0));
     }
 
     @Override

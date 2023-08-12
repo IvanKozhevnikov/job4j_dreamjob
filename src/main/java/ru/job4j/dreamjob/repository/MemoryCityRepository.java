@@ -24,5 +24,4 @@ public class MemoryCityRepository implements CityRepository {
     public Collection<City> findAll() {
         return cities.values();
     }
-
 }

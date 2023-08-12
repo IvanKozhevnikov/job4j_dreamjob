@@ -81,7 +81,8 @@ public class MemoryCandidateRepository implements CandidateRepository {
         return candidates.computeIfPresent(candidate.getId(), (id, oldCandidate) -> {
                 return new Candidate(
                         oldCandidate.getId(), candidate.getName(),
-                        candidate.getDescription(), candidate.getCreationDate(), candidate.getCityId(), candidate.getFileId());
+                        candidate.getDescription(), candidate.getCreationDate(),
+                        candidate.getCityId(), candidate.getFileId());
         }) != null;
     }
 
