@@ -42,7 +42,7 @@ public class Sql2oVacancyRepositoryTest {
 
         sql2oVacancyRepository = new Sql2oVacancyRepository(sql2o);
         sql2oFileRepository = new Sql2oFileRepository(sql2o);
-        file = new File("test", "test");
+        file = new File("Xhn06gM1Q-0.jpg", "files\\39198818-a692-4c8e-92b7-3ef4e8214b68Xhn06gM1Q-0.jpg");
         sql2oFileRepository.save(file);
     }
 
@@ -72,11 +72,11 @@ public class Sql2oVacancyRepositoryTest {
     public void whenSaveSeveralThenGetAll() {
         var creationDate = now().truncatedTo(ChronoUnit.MINUTES);
         var vacancy1 = sql2oVacancyRepository.save(new Vacancy(
-                0, "title1", "description1", creationDate, true, 1, file.getId()));
+                0, "title", "description1", creationDate, true, 1, file.getId()));
         var vacancy2 = sql2oVacancyRepository.save(new Vacancy(
-                0, "title2", "description2", creationDate, false, 1, file.getId()));
+                0, "title", "description2", creationDate, false, 1, file.getId()));
         var vacancy3 = sql2oVacancyRepository.save(new Vacancy(
-                0, "title3", "description3", creationDate, true, 1, file.getId()));
+                0, "title", "description3", creationDate, true, 1, file.getId()));
         var result = sql2oVacancyRepository.findAll();
         assertThat(result).isEqualTo(List.of(vacancy1, vacancy2, vacancy3));
     }
