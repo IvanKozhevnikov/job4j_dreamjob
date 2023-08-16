@@ -2,7 +2,7 @@ package ru.job4j.dreamjob.service;
 
 import net.jcip.annotations.ThreadSafe;
 import org.springframework.stereotype.Service;
-import ru.job4j.dreamjob.dto.FileDto;
+import org.sql2o.converters.ConverterException;
 import ru.job4j.dreamjob.model.User;
 import ru.job4j.dreamjob.repository.UserRepository;
 
@@ -19,7 +19,7 @@ public class SimpleUserService implements UserService {
     }
 
     @Override
-    public Optional<User> save(User user) {
+    public Optional<User> save(User user) throws ConverterException {
         return userRepository.save(user);
     }
 

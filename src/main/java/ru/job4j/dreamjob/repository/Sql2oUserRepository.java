@@ -4,8 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.sql2o.Sql2o;
+import org.sql2o.Sql2oException;
 import ru.job4j.dreamjob.model.User;
-import ru.job4j.dreamjob.model.Vacancy;
 
 import java.util.Optional;
 
@@ -35,9 +35,8 @@ public class Sql2oUserRepository implements UserRepository {
             user.setId(generatedId);
             return Optional.of(user);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw new Sql2oException("Пользователь с таким именем уже существует");
         }
-        return Optional.empty();
     }
 
     @Override
