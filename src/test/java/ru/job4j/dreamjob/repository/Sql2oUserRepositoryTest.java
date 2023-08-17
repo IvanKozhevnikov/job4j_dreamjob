@@ -1,24 +1,25 @@
+package ru.job4j.dreamjob.repository;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.sql2o.Sql2oException;
 import ru.job4j.dreamjob.configuration.DatasourceConfiguration;
 import ru.job4j.dreamjob.model.User;
-import ru.job4j.dreamjob.repository.Sql2oUserRepository;
 
 import java.util.Properties;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class Sql2oUserRepositoryTest {
 
- /*   private static Sql2oUserRepository sql2oUserRepository;
+   private static Sql2oUserRepository sql2oUserRepository;
 
     @BeforeAll
     public static void initRepositories() throws Exception {
         var properties = new Properties();
-        try (var inputStream = Sql2oVacancyRepositoryTest.class.getClassLoader().getResourceAsStream("connection.properties")) {
+        try (var inputStream = Sql2oUserRepositoryTest.class.getClassLoader().getResourceAsStream("application.properties")) {
             properties.load(inputStream);
         }
         var url = properties.getProperty("datasource.url");
@@ -75,5 +76,4 @@ class Sql2oUserRepositoryTest {
         assertThrows(Sql2oException.class, () -> sql2oUserRepository
                 .save(new User(2, email, "Elena", "9999999")));
     }
-    */
 }

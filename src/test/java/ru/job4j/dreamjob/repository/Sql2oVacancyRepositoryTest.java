@@ -1,3 +1,5 @@
+package ru.job4j.dreamjob.repository;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -5,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import ru.job4j.dreamjob.configuration.DatasourceConfiguration;
 import ru.job4j.dreamjob.model.File;
 import ru.job4j.dreamjob.model.Vacancy;
-import ru.job4j.dreamjob.repository.Sql2oFileRepository;
-import ru.job4j.dreamjob.repository.Sql2oVacancyRepository;
 
 import java.time.temporal.ChronoUnit;
 import java.util.List;
@@ -18,7 +18,7 @@ import static java.util.Optional.empty;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class Sql2oVacancyRepositoryTest {
-/*
+
     private static Sql2oVacancyRepository sql2oVacancyRepository;
 
     private static Sql2oFileRepository sql2oFileRepository;
@@ -29,7 +29,7 @@ public class Sql2oVacancyRepositoryTest {
     public static void initRepositories() throws Exception {
         var properties = new Properties();
         try (var inputStream = Sql2oVacancyRepositoryTest.class.getClassLoader()
-                .getResourceAsStream("connection.properties")) {
+                .getResourceAsStream("application.properties")) {
             properties.load(inputStream);
         }
         var url = properties.getProperty("datasource.url");
@@ -126,5 +126,4 @@ public class Sql2oVacancyRepositoryTest {
         var isUpdated = sql2oVacancyRepository.update(vacancy);
         assertThat(isUpdated).isFalse();
     }
-*/
 }

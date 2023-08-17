@@ -30,7 +30,7 @@ public class Sql2oUserRepository implements UserRepository {
             user.setId(generatedId);
             return Optional.of(user);
         } catch (Exception e) {
-            throw new Sql2oException("Пользователь с таким именем уже существует");
+            throw new Sql2oException(e);
         }
     }
 
