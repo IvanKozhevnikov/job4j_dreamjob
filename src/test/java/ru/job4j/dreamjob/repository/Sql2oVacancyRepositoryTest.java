@@ -42,7 +42,7 @@ public class Sql2oVacancyRepositoryTest {
 
         sql2oVacancyRepository = new Sql2oVacancyRepository(sql2o);
         sql2oFileRepository = new Sql2oFileRepository(sql2o);
-        file = new File("Xhn06gM1Q-0.jpg", "files\\39198818-a692-4c8e-92b7-3ef4e8214b68Xhn06gM1Q-0.jpg");
+        file = new File("39198818-a692-4c8e-92b7-3ef4e8214b68Xhn06gM1Q-0.jpg", "files");
         sql2oFileRepository.save(file);
     }
 
