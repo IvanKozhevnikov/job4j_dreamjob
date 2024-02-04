@@ -4,9 +4,11 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import ru.job4j.dreamjob.configuration.DatasourceConfiguration;
-import ru.job4j.dreamjob.model.File;
-import ru.job4j.dreamjob.model.Vacancy;
+import ru.job4j.dream.configuration.DatasourceConfiguration;
+import ru.job4j.dream.model.File;
+import ru.job4j.dream.model.Vacancy;
+import ru.job4j.dream.repository.Sql2oFileRepository;
+import ru.job4j.dream.repository.Sql2oVacancyRepository;
 
 import java.time.temporal.ChronoUnit;
 import java.util.List;

@@ -4,9 +4,12 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import ru.job4j.dreamjob.configuration.DatasourceConfiguration;
-import ru.job4j.dreamjob.model.Candidate;
-import ru.job4j.dreamjob.model.File;
+import ru.job4j.dream.configuration.DatasourceConfiguration;
+import ru.job4j.dream.model.Candidate;
+import ru.job4j.dream.model.File;
+import ru.job4j.dream.repository.Sql2oCandidateRepository;
+import ru.job4j.dream.repository.Sql2oFileRepository;
+
 import static java.time.LocalDateTime.now;
 import static java.util.Optional.empty;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;

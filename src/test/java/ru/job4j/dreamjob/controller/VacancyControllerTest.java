@@ -7,13 +7,13 @@ import org.mockito.ArgumentCaptor;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.ui.ConcurrentModel;
 import org.springframework.web.multipart.MultipartFile;
-import ru.job4j.dreamjob.dto.FileDto;
-import ru.job4j.dreamjob.model.City;
-import ru.job4j.dreamjob.model.Vacancy;
-import ru.job4j.dreamjob.service.CityService;
-import ru.job4j.dreamjob.service.VacancyService;
+import ru.job4j.dream.controller.VacancyController;
+import ru.job4j.dream.dto.FileDto;
+import ru.job4j.dream.model.City;
+import ru.job4j.dream.model.Vacancy;
+import ru.job4j.dream.service.CityService;
+import ru.job4j.dream.service.VacancyService;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 import static java.time.LocalDateTime.now;

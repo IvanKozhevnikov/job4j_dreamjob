@@ -4,8 +4,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.sql2o.Sql2oException;
-import ru.job4j.dreamjob.configuration.DatasourceConfiguration;
-import ru.job4j.dreamjob.model.User;
+import ru.job4j.dream.configuration.DatasourceConfiguration;
+import ru.job4j.dream.model.User;
+import ru.job4j.dream.repository.Sql2oUserRepository;
 
 import java.util.Properties;
 
