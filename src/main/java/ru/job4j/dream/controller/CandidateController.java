@@ -10,7 +10,7 @@ import ru.job4j.dream.model.Candidate;
 import ru.job4j.dream.service.CityService;
 import ru.job4j.dream.service.CandidateService;
 
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpSession;
 
 @ThreadSafe
 @Controller

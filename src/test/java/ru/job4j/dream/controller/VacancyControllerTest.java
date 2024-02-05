@@ -1,4 +1,4 @@
-package ru.job4j.dreamjob.controller;
+package ru.job4j.dream.controller;
 
 
 import org.junit.jupiter.api.BeforeEach;

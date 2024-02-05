@@ -11,8 +11,8 @@ import org.sql2o.converters.ConverterException;
 import ru.job4j.dream.model.User;
 import ru.job4j.dream.service.UserService;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 @ThreadSafe
 @Controller
