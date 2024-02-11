@@ -21,7 +21,7 @@ services:
       - JDBC_URL=jdbc:postgresql://127.20.0.2/16:5432/dreamjob
       - JDBC_USERNAME=postgres
       - JDBC_PASSWORD=1234
-      - JDBC_DRIVER=org.postgresql.Driver
+      - JDBC_DRIVER=driver-class-name
     container_name: job4j_dreamjob
     depends_on:
       - db
