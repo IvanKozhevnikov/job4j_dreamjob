@@ -1,5 +1,7 @@
 FROM maven:3.6.3-openjdk-17
 
+EXPOSE 8080
+
 RUN mkdir job4j_dreamjob
 
 WORKDIR job4j_dreamjob
