@@ -25,15 +25,15 @@ public class Main {
     private static Connection loadConnection() throws ClassNotFoundException, SQLException {
         var config = new Properties();
         try (InputStream in = Main.class.getClassLoader()
-                .getResourceAsStream("app.properties")) {
+                .getResourceAsStream("application.properties")) {
             config.load(in);
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
-        String url = loadSysEnvIfNullThenConfig("JDBC_URL", "url", config);
-        String username = loadSysEnvIfNullThenConfig("JDBC_USERNAME", "username", config);
-        String password = loadSysEnvIfNullThenConfig("JDBC_PASSWORD", "password", config);
-        String driver = loadSysEnvIfNullThenConfig("JDBC_DRIVER", "driver-class-name", config);
+        String url = loadSysEnvIfNullThenConfig("JDBC_URL", "datasource.url", config);
+        String username = loadSysEnvIfNullThenConfig("JDBC_USERNAME", "datasource.username", config);
+        String password = loadSysEnvIfNullThenConfig("JDBC_PASSWORD", "datasource.password", config);
+        String driver = loadSysEnvIfNullThenConfig("JDBC_DRIVER", "datasource.driver-class-name", config);
         System.out.println("url=" + url);
         Class.forName(driver);
         return DriverManager.getConnection(
