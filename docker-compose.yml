@@ -18,10 +18,10 @@ services:
     ports:
       - "127.0.0.1:8080:8080"
     environment:
-      - spring.datasource.url=jdbc:postgresql://db:5432/dreamjob
-      - spring.datasource.username=postgres
-      - spring.datasource.password=1234
-      - spring.datasource.driver-class-name=org.postgresql.Driver
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/dreamjob
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=1234
+      - SPRING_DATASOURCE_DRIVER=org.postgresql.Driver
     container_name: job4j_dreamjob
     depends_on:
       - db
