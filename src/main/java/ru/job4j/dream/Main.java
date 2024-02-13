@@ -41,8 +41,9 @@ public class Main {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         try (Connection connection = loadConnection()) {
-            String SQL = "select * from cities";
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("select * from cities");
 
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
