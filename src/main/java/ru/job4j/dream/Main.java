@@ -40,7 +40,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        try (Connection connection = loadConnection()) {
+  /**      try (Connection connection = loadConnection()) {
 
             PreparedStatement preparedStatement = connection
                     .prepareStatement("select * from cities");
@@ -54,7 +54,8 @@ public class Main {
                 System.out.println("Name: " + name);
                 System.out.println("\n============================\n");
             }
+        }*/
             SpringApplication.run(Main.class, args);
-        }
+
     }
 }
