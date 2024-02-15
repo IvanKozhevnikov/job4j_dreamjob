@@ -12,6 +12,7 @@ services:
       - ./db/shortcut/data:/var/lib/postgresql/data
     restart: always
   job4j_dreamjob:
+    network_mode: host
     build:
       context: .
       dockerfile: Dockerfile
